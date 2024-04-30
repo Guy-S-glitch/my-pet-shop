@@ -9,10 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { FormFieldPassword } from './authentication/form-field/password/password.component';
+import { FormFieldEmail } from './authentication/form-field/email/email.component';
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent],
-  imports: [BrowserModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
+  declarations: [AppComponent, MainNavComponent, AuthenticationComponent],
+  imports: [BrowserModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,FormFieldPassword,FormFieldEmail],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

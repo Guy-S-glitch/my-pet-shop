@@ -8,10 +8,10 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-LOUVEDQZ.js";
+} from "./chunk-3GHCSINQ.js";
 import {
   DOCUMENT
-} from "./chunk-NQNEAV6N.js";
+} from "./chunk-HDFNTJDY.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -70,7 +70,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-J4GFARMB.js";
+} from "./chunk-2NJ7L2DD.js";
 import {
   BehaviorSubject,
   Observable,
@@ -87,7 +87,7 @@ import {
   take,
   takeUntil,
   tap
-} from "./chunk-LZZK4TTY.js";
+} from "./chunk-ZDOIMVJD.js";
 
 // node_modules/@angular/cdk/fesm2022/keycodes.mjs
 var TAB = 9;
@@ -2776,6 +2776,28 @@ function _checkCdkVersionMatch() {
     console.warn("The Angular Material version (" + VERSION2.full + ") does not match the Angular CDK version (" + VERSION.full + ").\nPlease ensure the versions of these two packages exactly match.");
   }
 }
+var _ErrorStateTracker = class {
+  constructor(_defaultMatcher, ngControl, _parentFormGroup, _parentForm, _stateChanges) {
+    this._defaultMatcher = _defaultMatcher;
+    this.ngControl = ngControl;
+    this._parentFormGroup = _parentFormGroup;
+    this._parentForm = _parentForm;
+    this._stateChanges = _stateChanges;
+    this.errorState = false;
+  }
+  /** Updates the error state based on the provided error state matcher. */
+  updateErrorState() {
+    const oldState = this.errorState;
+    const parent = this._parentFormGroup || this._parentForm;
+    const matcher = this.matcher || this._defaultMatcher;
+    const control = this.ngControl ? this.ngControl.control : null;
+    const newState = matcher?.isErrorState(control, parent) ?? false;
+    if (newState !== oldState) {
+      this.errorState = newState;
+      this._stateChanges.next();
+    }
+  }
+};
 var MAT_DATE_LOCALE = new InjectionToken("MAT_DATE_LOCALE", {
   providedIn: "root",
   factory: MAT_DATE_LOCALE_FACTORY
@@ -4530,10 +4552,12 @@ export {
   Directionality,
   BidiModule,
   MatCommonModule,
+  _ErrorStateTracker,
+  ErrorStateMatcher,
   RippleRenderer,
   MAT_RIPPLE_GLOBAL_OPTIONS,
   MatRippleModule,
   MatPseudoCheckboxModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-K7XLYJY6.js.map
+//# sourceMappingURL=chunk-YGH7BB2B.js.map
