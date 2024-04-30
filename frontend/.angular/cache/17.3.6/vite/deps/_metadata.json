@@ -1,0 +1,46 @@
+{
+  "hash": "6bc53e7a",
+  "configHash": "cdc68e95",
+  "lockfileHash": "137a99f2",
+  "browserHash": "5c44a890",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "773eed86",
+      "needsInterop": false
+    },
+    "@angular/material/slide-toggle": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/slide-toggle.mjs",
+      "file": "@angular_material_slide-toggle.js",
+      "fileHash": "443034bc",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "c92b8d9a",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations/async": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
+      "file": "@angular_platform-browser_animations_async.js",
+      "fileHash": "5b662f19",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-D2OPCJ2D": {
+      "file": "chunk-D2OPCJ2D.js"
+    },
+    "browser-K5ZR5RWT": {
+      "file": "browser-K5ZR5RWT.js"
+    },
+    "chunk-RBVK5AZV": {
+      "file": "chunk-RBVK5AZV.js"
+    },
+    "chunk-73ZEMORK": {
+      "file": "chunk-73ZEMORK.js"
+    }
+  }
+}
