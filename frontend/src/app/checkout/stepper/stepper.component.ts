@@ -9,6 +9,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatButtonModule } from "@angular/material/button";
+import { AddressFormComponent } from "./address-form/address-form.component";
 
 
 @Component({
@@ -23,6 +24,7 @@ import { MatButtonModule } from "@angular/material/button";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    AddressFormComponent
   ],
 })
 export class CheckoutStepper {

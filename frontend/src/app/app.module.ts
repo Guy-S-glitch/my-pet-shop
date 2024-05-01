@@ -27,7 +27,6 @@ import { CheckoutStepper } from "./checkout/stepper/stepper.component";
 
 import { MatSelectModule } from "@angular/material/select";
 import { MatRadioModule } from "@angular/material/radio";
-import { AddressFormComponent } from "./checkout/address-form/address-form.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { AddressFormComponent } from "./checkout/address-form/address-form.compo
     AuthenticationComponent,
     CheckoutComponent,
     ShopComponent,
-    AddressFormComponent,
     MainNavComponent,
   ],
   imports: [
@@ -45,7 +43,7 @@ import { AddressFormComponent } from "./checkout/address-form/address-form.compo
 
     AppRoutes,
 
-    CheckoutStepper,
+    CheckoutStepper,    
 
     MatToolbarModule,
     MatSidenavModule,
