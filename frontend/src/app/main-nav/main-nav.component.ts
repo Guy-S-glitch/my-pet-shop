@@ -1,19 +1,20 @@
-import { Component, inject } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, inject } from "@angular/core";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { Observable } from "rxjs";
+import { map, shareReplay } from "rxjs/operators";
 
 @Component({
-  selector: 'app-main-nav',
-  templateUrl: './main-nav.component.html',
-  styleUrl: './main-nav.component.css'
+  selector: "app-main-nav",
+  templateUrl: "./main-nav.component.html",
+  styleUrl: "./main-nav.component.css",
 })
 export class MainNavComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map((result) => result.matches),
       shareReplay()
     );
 }

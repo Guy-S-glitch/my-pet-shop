@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Validators } from "@angular/forms";
 import { FormBuilder } from "@angular/forms";
-import { merge } from "rxjs";
 @Component({
   selector: "app-authentication",
   templateUrl: "./authentication.component.html",
