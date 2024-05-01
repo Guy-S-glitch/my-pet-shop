@@ -1,4 +1,4 @@
-
+<!-- 
     <div class="row" style="margin-top: 30px;">
     <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
         <form>
@@ -17,6 +17,41 @@
           Switch to {{ isLoginMode ? "Sign up" : "Login" }}
         </button>
       </div>
+    </form>
+  </div>
+</div> -->
+<div class="row">
+  <div
+    class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3"
+  >
+    <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">password</label>
+        <input
+          formControlName="password"
+          type="password"
+          name="password"
+          id="password"
+          class="form-control"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {{ isLoginMode ? "Login" : "Sign up" }}
+      </button>
+      |
+      <button type="button" class="btn btn-primary">
+        Switch to {{!isLoginMode?'login':'signUp'}}
+      </button>
     </form>
   </div>
 </div>

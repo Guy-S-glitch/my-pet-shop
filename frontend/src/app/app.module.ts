@@ -12,10 +12,11 @@ import { MatListModule } from '@angular/material/list';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { FormFieldPassword } from './authentication/form-field/password/password.component';
 import { FormFieldEmail } from './authentication/form-field/email/email.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, MainNavComponent, AuthenticationComponent],
-  imports: [BrowserModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,FormFieldPassword,FormFieldEmail],
+  imports: [BrowserModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,FormFieldPassword,FormFieldEmail,ReactiveFormsModule],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
