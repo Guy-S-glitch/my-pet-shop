@@ -375,6 +375,7 @@ export {
   ArrayDataSource,
   _VIEW_REPEATER_STRATEGY,
   _RecycleViewRepeaterStrategy,
-  SelectionModel
+  SelectionModel,
+  UniqueSelectionDispatcher
 };
-//# sourceMappingURL=chunk-Y4NJLLKP.js.map
+//# sourceMappingURL=chunk-ADHZNZTK.js.map

@@ -42,8 +42,27 @@ function _isNumberValue(value) {
 function coerceArray(value) {
   return Array.isArray(value) ? value : [value];
 }
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
 function coerceElement(elementOrRef) {
   return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
+function coerceStringArray(value, separator = /\s+/) {
+  const result = [];
+  if (value != null) {
+    const sourceValues = Array.isArray(value) ? value : `${value}`.split(separator);
+    for (const sourceValue of sourceValues) {
+      const trimmedString = `${sourceValue}`.trim();
+      if (trimmedString) {
+        result.push(trimmedString);
+      }
+    }
+  }
+  return result;
 }
 
 // node_modules/@angular/cdk/fesm2022/platform.mjs
@@ -478,9 +497,6 @@ var Breakpoints = {
 };
 
 export {
-  coerceBooleanProperty,
-  coerceNumberProperty,
-  coerceElement,
   Platform,
   getSupportedInputTypes,
   normalizePassiveListenerOptions,
@@ -491,9 +507,15 @@ export {
   _getFocusedElementPierceShadowDom,
   _getEventTarget,
   _isTestEnvironment,
+  coerceBooleanProperty,
+  coerceNumberProperty,
+  coerceArray,
+  coerceCssPixelValue,
+  coerceElement,
+  coerceStringArray,
   LayoutModule,
   MediaMatcher,
   BreakpointObserver,
   Breakpoints
 };
-//# sourceMappingURL=chunk-3GHCSINQ.js.map
+//# sourceMappingURL=chunk-2C35K23J.js.map
