@@ -9,9 +9,9 @@
   >
     <mat-toolbar>Pet shop</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Authentication</a>
-      <a mat-list-item href="#">Shop</a>
-      <a mat-list-item href="#">Cart</a>
+      <a mat-list-item [routerLink]="['/']">Authentication</a>
+      <a mat-list-item [routerLink]="['/shop']">Shop</a>
+      <a mat-list-item [routerLink]="['/cart']">Cart</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,7 +28,6 @@
       }
       <span>frontend</span>
     </mat-toolbar>
-    <!-- <app-authentication></app-authentication> -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

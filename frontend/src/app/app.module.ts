@@ -20,12 +20,14 @@ import { MatInputModule } from "@angular/material/input";
 import { MatNativeDateModule } from "@angular/material/core";
 import { ShopComponent } from "./shop/shop.component";
 import { AppRoutes } from "./app.routing";
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     AuthenticationComponent,
     ShopComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
