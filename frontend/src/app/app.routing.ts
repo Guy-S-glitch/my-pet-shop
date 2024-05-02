@@ -3,13 +3,17 @@ import { AuthenticationComponent } from "./authentication/authentication.compone
 import { ShopComponent } from "./shop/shop.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { NewAnimalComponent } from "./shop/new-animal/new-animal.component";
+import { ExpandAnimalComponent } from "./shop/expand-animal/expand-animal.component";
 
 const routes: Routes = [
   { path: "", component: AuthenticationComponent },
   {
     path: "shop",
     component: ShopComponent,
-    children: [{ path: "new", component: NewAnimalComponent }],
+    children: [
+      { path: "new", component: NewAnimalComponent },
+      { path: "expand", component: ExpandAnimalComponent },
+    ],
   },
   { path: "checkout", component: CheckoutComponent },
 ];

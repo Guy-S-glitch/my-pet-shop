@@ -51,4 +51,7 @@ export class DashboardComponent {
     // debugger;
     this.router.navigate(["new"], { relativeTo: this.route });
   }
+  expandAnimal() {
+    this.router.navigate(["expand"], { relativeTo: this.route });
+  }
 }
