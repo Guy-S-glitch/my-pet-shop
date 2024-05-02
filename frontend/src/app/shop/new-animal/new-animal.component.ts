@@ -6,7 +6,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import * as fromMatCard from "@angular/material/card";
+import { MatButton } from "@angular/material/button";
+import {
+  MatCard,
+  MatCardHeader,
+  MatCardTitle,
+  MatCardActions,
+  MatCardSubtitle,
+  MatCardContent,
+} from "@angular/material/card";
 
 @Component({
   selector: "app-new-animal",
@@ -16,13 +24,13 @@ import * as fromMatCard from "@angular/material/card";
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    fromMatCard.MatCard,
-    fromMatCard.MatCardHeader,
-    fromMatCard.MatCardTitle,
-    fromMatCard.MatCardActions,
-    fromMatCard.MatCardSubtitle,
-    fromMatCard.MatCardContent
-    
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardActions,
+    MatCardSubtitle,
+    MatCardContent,
+    MatButton,
   ],
 })
 export class NewAnimalComponent implements OnInit {
