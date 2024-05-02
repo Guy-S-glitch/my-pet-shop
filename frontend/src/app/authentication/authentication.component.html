@@ -8,6 +8,26 @@
         <mat-card-content>
           <div class="row">
             <div [className]="centerDiv">
+              <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input
+                  matInput
+                  formControlName="email"
+                  placeholder="pat@example.com"
+                />
+                <mat-error
+                  *ngIf="
+                    myLoginForm.get('email').touched &&
+                    myLoginForm.get('email').invalid
+                  "
+                  >Invalid email</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div [className]="centerDiv">
               <mat-form-field class="full-width">
                 <mat-label>Enter your password</mat-label>
                 <input
@@ -36,27 +56,7 @@
               </mat-form-field>
             </div>
           </div>
-          <br>
-          <div class="row">
-            <div [className]="centerDiv">
-              <mat-form-field>
-                <mat-label>Enter your email</mat-label>
-                <input
-                  matInput
-                  formControlName="email"
-                  placeholder="pat@example.com"
-                />
-                <mat-error
-                *ngIf="
-                  myLoginForm.get('email').touched &&
-                  myLoginForm.get('email').invalid
-                "
-                >Invalid email</mat-error
-              >
-              </mat-form-field>
-              
-            </div>
-          </div>
+          <br><br>
         </mat-card-content>
         <mat-card-actions>
           <button

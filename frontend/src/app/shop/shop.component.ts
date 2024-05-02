@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewAnimalComponent } from './new-animal/new-animal.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -9,7 +11,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   standalone:true,
   imports:[
     CommonModule,
-    DashboardComponent
+    DashboardComponent,
+    NewAnimalComponent,
+    RouterModule
   ]
 })
 export class ShopComponent {

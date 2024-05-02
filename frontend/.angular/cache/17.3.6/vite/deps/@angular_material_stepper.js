@@ -2,12 +2,12 @@ import {
   MatIcon,
   MatIconModule
 } from "./chunk-4PPH6CTE.js";
+import "./chunk-KDONYTSL.js";
 import {
   CdkPortalOutlet,
   PortalModule,
   TemplatePortal
 } from "./chunk-WN3X2Y76.js";
-import "./chunk-KDONYTSL.js";
 import {
   animate,
   animateChild,
