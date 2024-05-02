@@ -26,17 +26,17 @@
                     hide ? "visibility_off" : "visibility"
                   }}</mat-icon>
                 </button>
+                <mat-error
+                  *ngIf="
+                    myLoginForm.get('password').touched &&
+                    myLoginForm.get('password').invalid
+                  "
+                  >Password must be at least 6 characters long</mat-error
+                >
               </mat-form-field>
-              <span
-                class="help-block"
-                *ngIf="
-                  myLoginForm.get('password').touched &&
-                  myLoginForm.get('password').invalid
-                "
-                >Password must be at least 6 characters long</span
-              >
             </div>
           </div>
+          <br>
           <div class="row">
             <div [className]="centerDiv">
               <mat-form-field>
@@ -46,23 +46,35 @@
                   formControlName="email"
                   placeholder="pat@example.com"
                 />
-              </mat-form-field>
-              <span
+                <mat-error
                 *ngIf="
                   myLoginForm.get('email').touched &&
                   myLoginForm.get('email').invalid
                 "
-                class="help-block"
-                >Invalid email</span
+                >Invalid email</mat-error
               >
+              </mat-form-field>
+              
             </div>
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button type="submit" class="Send" mat-raised-button color="primary" [disabled]="myLoginForm.invalid">
+          <button
+            type="submit"
+            class="Send"
+            mat-raised-button
+            color="primary"
+            [disabled]="myLoginForm.invalid"
+          >
             {{ isLoginMode ? "Login" : "Sign up" }}
-          </button> 
-          <button style="margin-left: 10px;" type="button" mat-raised-button color="primary" (click)="isLoginMode=!isLoginMode">
+          </button>
+          <button
+            style="margin-left: 10px"
+            type="button"
+            mat-raised-button
+            color="primary"
+            (click)="isLoginMode = !isLoginMode"
+          >
             Switch to {{ !isLoginMode ? "login" : "sign up" }}
           </button>
         </mat-card-actions>

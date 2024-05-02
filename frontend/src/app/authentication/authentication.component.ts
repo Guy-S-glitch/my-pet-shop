@@ -1,10 +1,33 @@
+import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { FormBuilder } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } from "@angular/material/card";
+import { MatError, MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatIcon } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
 @Component({
   selector: "app-authentication",
   templateUrl: "./authentication.component.html",
   styleUrl: "./authentication.component.css",
+  standalone: true,
+  imports: [
+    MatCard,
+    MatCardActions,
+    MatLabel,
+    MatFormField,
+    MatIcon,
+    MatCardContent,
+    MatCardTitle,
+    MatCardHeader,
+    MatInputModule,
+    MatButtonModule,
+    MatError,
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
+  ],
 })
 export class AuthenticationComponent implements OnInit {
   centerDiv =
