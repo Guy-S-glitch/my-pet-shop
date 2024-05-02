@@ -12,15 +12,35 @@
               </button>
               <mat-menu #menu="matMenu" xPosition="before">
                 <button mat-menu-item>Expand</button>
+                <!-- on click expand open new card show full details -->
                 <button mat-menu-item>Remove</button>
+                <!-- click remove from data -->
               </mat-menu>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
-            <div>Card Content Here</div>
+            <div>
+              <!-- add here name specirs and thumbnail -->
+              Card Content Here
+            </div>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
     }
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              Add card
+              <button mat-icon-button class="more-button">
+                <mat-icon>add_vert</mat-icon>
+              </button>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div>Add your own animal here</div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
   </mat-grid-list>
 </div>
