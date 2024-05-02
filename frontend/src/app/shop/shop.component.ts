@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-shop',
@@ -7,7 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './shop.component.css',
   standalone:true,
   imports:[
-    CommonModule
+    CommonModule,
+    DashboardComponent
   ]
 })
 export class ShopComponent {

@@ -1,8 +1,13 @@
 import {
+  MatIcon,
+  MatIconModule
+} from "./chunk-4PPH6CTE.js";
+import {
   CdkPortalOutlet,
   PortalModule,
   TemplatePortal
 } from "./chunk-WN3X2Y76.js";
+import "./chunk-KDONYTSL.js";
 import {
   animate,
   animateChild,
@@ -13,11 +18,6 @@ import {
   transition,
   trigger
 } from "./chunk-UO4MEBG3.js";
-import {
-  MatIcon,
-  MatIconModule
-} from "./chunk-66QZ3HQR.js";
-import "./chunk-KDONYTSL.js";
 import {
   BidiModule,
   Directionality,
@@ -30,7 +30,7 @@ import {
   MatRippleModule,
   SPACE,
   hasModifierKey
-} from "./chunk-FZZFR5YW.js";
+} from "./chunk-X3T4DLIJ.js";
 import {
   Platform,
   _getFocusedElementPierceShadowDom

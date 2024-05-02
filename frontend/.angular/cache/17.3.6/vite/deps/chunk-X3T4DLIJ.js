@@ -4741,6 +4741,8 @@ export {
   FocusKeyManager,
   InteractivityChecker,
   FocusTrapFactory,
+  isFakeMousedownFromScreenReader,
+  isFakeTouchstartFromScreenReader,
   LiveAnnouncer,
   FocusMonitor,
   Directionality,
@@ -4791,4 +4793,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-FZZFR5YW.js.map
+//# sourceMappingURL=chunk-X3T4DLIJ.js.map
