@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+<form [formGroup]="myLoginForm" (ngSubmit)="onSubmit()" class="form-container">
   <div class="row">
     <div [className]="centerDiv">
       <mat-card>
@@ -30,8 +30,8 @@
               <span
                 class="help-block"
                 *ngIf="
-                  loginForm.get('password').touched &&
-                  loginForm.get('password').invalid
+                  myLoginForm.get('password').touched &&
+                  myLoginForm.get('password').invalid
                 "
                 >Password must be at least 6 characters long</span
               >
@@ -49,8 +49,8 @@
               </mat-form-field>
               <span
                 *ngIf="
-                  loginForm.get('email').touched &&
-                  loginForm.get('email').invalid
+                  myLoginForm.get('email').touched &&
+                  myLoginForm.get('email').invalid
                 "
                 class="help-block"
                 >Invalid email</span
@@ -59,7 +59,7 @@
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button type="submit" class="Send" mat-raised-button color="primary" [disabled]="loginForm.invalid">
+          <button type="submit" class="Send" mat-raised-button color="primary" [disabled]="myLoginForm.invalid">
             {{ isLoginMode ? "Login" : "Sign up" }}
           </button> 
           <button style="margin-left: 10px;" type="button" mat-raised-button color="primary" (click)="isLoginMode=!isLoginMode">
