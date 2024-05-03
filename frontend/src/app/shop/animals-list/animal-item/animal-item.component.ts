@@ -11,7 +11,7 @@ import {
 } from "@angular/material/card";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { MatGridListModule } from "@angular/material/grid-list";
 
@@ -27,14 +27,15 @@ import { MatGridListModule } from "@angular/material/grid-list";
     MatButtonModule,
     MatCardModule,
     CommonModule,
+    RouterModule
   ],
 })
 export class AnimalItemComponent implements OnInit {
   @Input() index: number;
   @Input() animal: animalBoard;
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private route: Router, private router: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {  }
   expandAnimal() {
     // this.route.navigate([this.index], { relativeTo: this.router });
   }

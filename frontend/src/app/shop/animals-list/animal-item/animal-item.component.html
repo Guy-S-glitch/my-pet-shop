@@ -1,4 +1,3 @@
-
 <mat-card class="dashboard-card">
   <mat-card-header>
     <mat-card-title>
@@ -12,22 +11,19 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu" xPosition="before">
-        <button mat-menu-item (click)="expandAnimal()">Expand</button>
+        <button mat-menu-item (click)="expandAnimal()" [routerLink]="[index]">
+          Expand
+        </button>
         <!-- on click expand open new card show full details -->
         <button mat-menu-item (click)="removeAnimal()">Remove</button>
         <!-- click remove from data -->
       </mat-menu>
     </mat-card-title>
-    <mat-card-subtitle>
-      Species: {{ animal.species }}
-    </mat-card-subtitle>
+    <mat-card-subtitle> Species: {{ animal.species }} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="dashboard-card-content">
     <div>
-      <img
-        [src]="animal.image"
-        [alt]="animal.name"
-      />
+      <img [src]="animal.image" [alt]="animal.name" />
     </div>
   </mat-card-content>
 </mat-card>
