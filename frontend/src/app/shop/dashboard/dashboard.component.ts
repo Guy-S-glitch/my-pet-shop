@@ -8,6 +8,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { ActivatedRoute, Router } from "@angular/router";
+import { animals } from "./dashboard-datasource";
 
 @Component({
   selector: "app-dashboard",
@@ -29,19 +30,19 @@ export class DashboardComponent {
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
-        return [
-          { title: "Card 1", cols: 1, rows: 1 },
-          { title: "Card 2", cols: 1, rows: 1 },
-          { title: "Card 3", cols: 1, rows: 1 },
-          { title: "Card 4", cols: 1, rows: 1 },
+        return [...animals
+          // { title: "Card 1", cols: 1, rows: 1 },
+          // { title: "Card 2", cols: 1, rows: 1 },
+          // { title: "Card 3", cols: 1, rows: 1 },
+          // { title: "Card 4", cols: 1, rows: 1 },
         ];
       }
 
-      return [
-        { title: "Card 1", cols: 2, rows: 1 },
-        { title: "Card 2", cols: 1, rows: 1 },
-        { title: "Card 3", cols: 1, rows: 2 },
-        { title: "Card 4", cols: 1, rows: 1 },
+      return [...animals
+        // { title: "Card 1", cols: 2, rows: 1 },
+        // { title: "Card 2", cols: 1, rows: 1 },
+        // { title: "Card 3", cols: 1, rows: 2 },
+        // { title: "Card 4", cols: 1, rows: 1 },
       ];
     })
   );
@@ -53,5 +54,8 @@ export class DashboardComponent {
   }
   expandAnimal() {
     this.router.navigate(["expand"], { relativeTo: this.route });
+  }
+  removeAnimal(event:Event){
+    debugger;
   }
 }
