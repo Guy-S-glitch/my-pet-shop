@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import {
   ReactiveFormsModule,
@@ -12,6 +12,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSelectModule } from "@angular/material/select";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatCardModule } from "@angular/material/card";
+import { MatStepper } from "@angular/material/stepper";
 
 @Component({
   selector: "app-address-form",
@@ -28,7 +29,13 @@ import { MatCardModule } from "@angular/material/card";
   ],
 })
 export class AddressFormComponent {
-
+  @Input() stepper: MatStepper;
+  onSubmit(): void {
+    alert("Thanks!");
+    debugger;
+    console.log(this.myAddressForm);
+    this.stepper.next();
+  }
   myAddressForm: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.myAddressForm = this.formBuilder.group({
@@ -113,10 +120,4 @@ export class AddressFormComponent {
     { name: "Wisconsin", abbreviation: "WI" },
     { name: "Wyoming", abbreviation: "WY" },
   ];
-
-  onSubmit(): void {
-    alert("Thanks!");
-    debugger;
-    console.log(this.myAddressForm);
-  }
 }
