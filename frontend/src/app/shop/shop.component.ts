@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { AnimalsListComponent } from './animals-list/animals-list.component';
 import { NewAnimalComponent } from './new-animal/new-animal.component';
 import { RouterModule } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   standalone:true,
   imports:[
     CommonModule,
-    DashboardComponent,
+    AnimalsListComponent,
     NewAnimalComponent,
     RouterModule
   ]

@@ -1,8 +1,11 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+  <h1 class="mat-h1">Our pets</h1>
   <mat-grid-list cols="2" rowHeight="350px">
-    @for (card of cards | async; track card) {
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="1"
+      *ngFor="let card of cards; let i = index"
+    >
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -16,9 +19,9 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item (click)="expandAnimal()">Expand</button>
+              <button mat-menu-item (click)="expandAnimal(i)">Expand</button>
               <!-- on click expand open new card show full details -->
-              <button mat-menu-item (click)="removeAnimal($event)">
+              <button mat-menu-item (click)="removeAnimal(i)">
                 Remove
               </button>
               <!-- click remove from data -->
@@ -30,12 +33,17 @@
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <div>
-            <img [src]="card.image" [alt]="card.name" width="100%" height="200px" />
+            <img
+              [src]="card.image"
+              [alt]="card.name"
+              width="100%"
+              height="200px"
+            />
           </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-    }
+
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
