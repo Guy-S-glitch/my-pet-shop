@@ -1,6 +1,6 @@
 .stick {
   position: sticky;
-  top: 15%;
+  top: 72px;
   z-index: 0;
 }
 .full-width{

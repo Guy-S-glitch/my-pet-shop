@@ -14,6 +14,7 @@ import {
   MatCardActions,
   MatCardContent,
 } from "@angular/material/card";
+import { MatFormField } from "@angular/material/form-field";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
@@ -30,6 +31,7 @@ import { ActivatedRoute, Router } from "@angular/router";
     MatCardActions,
     MatCardContent,
     MatButton,
+    MatFormField,
   ],
 })
 export class NewAnimalComponent implements OnInit {
@@ -43,10 +45,10 @@ export class NewAnimalComponent implements OnInit {
 
   initForm() {
     this.newAnimalForm = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      species: new FormControl(null, [Validators.required]),
-      description: new FormControl(null),
-      image: new FormControl(null, [Validators.required]),
+      Name: new FormControl(null, [Validators.required]),
+      Species: new FormControl(null, [Validators.required]),
+      Description: new FormControl(null),
+      Image: new FormControl(null, [Validators.required]),
     });
   }
   onSubmit() {}
