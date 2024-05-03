@@ -11,12 +11,9 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu" xPosition="before">
-        <button mat-menu-item [routerLink]="[index]">
-          Expand
-        </button>
-        <!-- on click expand open new card show full details -->
-        <button mat-menu-item (click)="removeAnimal()">Remove</button>
-        <!-- click remove from data -->
+        <button mat-menu-item [routerLink]="[index]">Expand</button>
+        <button mat-menu-item>Update</button>
+        <button mat-menu-item>Remove</button>
       </mat-menu>
     </mat-card-title>
     <mat-card-subtitle> Species: {{ animal.species }} </mat-card-subtitle>
