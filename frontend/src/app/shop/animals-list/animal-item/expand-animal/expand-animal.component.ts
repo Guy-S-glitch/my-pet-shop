@@ -1,11 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import {
-  ReactiveFormsModule,
-  FormGroup,
-  FormControl,
-  Validators,
-} from "@angular/forms";
 import { MatButton } from "@angular/material/button";
 import {
   MatCard,
@@ -15,8 +9,11 @@ import {
   MatCardSubtitle,
   MatCardContent,
 } from "@angular/material/card";
-import { ActivatedRoute, Route, Router } from "@angular/router";
-import { Subscription } from "rxjs";
+import { ActivatedRoute, Router } from "@angular/router";
+import { map, Subscription, switchMap, take } from "rxjs";
+import { animalBoard } from "../../../store/animals-list-datasource";
+import { Store } from "@ngrx/store";
+import * as fromShop from "../../../../app-state/app-state.reducer";
 
 @Component({
   selector: "app-expand-animal",
@@ -25,7 +22,6 @@ import { Subscription } from "rxjs";
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     MatCard,
     MatCardHeader,
     MatCardTitle,
@@ -36,24 +32,29 @@ import { Subscription } from "rxjs";
   ],
 })
 export class ExpandAnimalComponent implements OnInit, OnDestroy {
-  constructor(private router: ActivatedRoute, private route: Router) {}
-  newAnimalForm: FormGroup;
+  constructor(
+    private router: ActivatedRoute,
+    private route: Router,
+    private store: Store<fromShop.appState>
+  ) {}
   centerDiv =
     "col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3";
   index: number;
   sub: Subscription;
-  initForm() {
-    this.newAnimalForm = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      species: new FormControl(null, [Validators.required]),
-      description: new FormControl(null),
-      image: new FormControl(null, [Validators.required]),
-    });
-  }
+  selectedAnimal: animalBoard;
   ngOnInit() {
+    debugger;
     this.sub = this.router.params.subscribe((params) => {
       this.index = +params["id"];
-      this.initForm();
+      this.store
+        .select("shop")
+        .pipe(
+          take(1),
+          map((animals) => animals.animals[this.index])
+        )
+        .subscribe((animal: animalBoard) => {
+          this.selectedAnimal = animal;
+        });
     });
   }
   ngOnDestroy(): void {
