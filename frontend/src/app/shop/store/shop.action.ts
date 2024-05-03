@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { animalBoard } from "../animals-list/animals-list-datasource";
+import { animalBoard } from "./animals-list-datasource";
 
 export const SET_ANIMALS = createAction(
   "[shop] Set animals",

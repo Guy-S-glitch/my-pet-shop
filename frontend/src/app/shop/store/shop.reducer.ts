@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { animalBoard, animals } from "../animals-list/animals-list-datasource";
+import { animalBoard, animals } from "./animals-list-datasource";
 import * as fromAction from "./shop.action";
 
 export interface State {

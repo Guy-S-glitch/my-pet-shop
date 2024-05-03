@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { animalBoard } from "../animals-list-datasource";
+import { animalBoard } from "../../store/animals-list-datasource";
 import { CommonModule } from "@angular/common";
 import {
   MatCard,
