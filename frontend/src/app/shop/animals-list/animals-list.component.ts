@@ -7,6 +7,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { ActivatedRoute, Router } from "@angular/router";
 import { animals } from "./animals-list-datasource";
+import { AnimalItemComponent } from "./animal-item/animal-item.component";
 
 @Component({
   selector: 'app-animals-list',
@@ -20,6 +21,7 @@ import { animals } from "./animals-list-datasource";
     MatButtonModule,
     MatCardModule,
     CommonModule,
+    AnimalItemComponent
   ],
 })
 export class AnimalsListComponent {
