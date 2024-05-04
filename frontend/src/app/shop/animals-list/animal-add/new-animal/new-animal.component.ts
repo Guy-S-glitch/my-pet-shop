@@ -16,6 +16,9 @@ import {
 } from "@angular/material/card";
 import { MatFormField } from "@angular/material/form-field";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { map, switchMap } from "rxjs";
+import * as fromApp from "../../../../app-state/app-state.reducer";
 
 @Component({
   selector: "app-new-animal",
@@ -35,20 +38,50 @@ import { ActivatedRoute, Router } from "@angular/router";
   ],
 })
 export class NewAnimalComponent implements OnInit {
-  constructor(private router: ActivatedRoute, private route: Router) {}
+  constructor(
+    private router: ActivatedRoute,
+    private route: Router,
+    private store: Store<fromApp.appState>
+  ) {}
   newAnimalForm: FormGroup;
+  editMode: boolean;
+  index: number;
   centerDiv =
     "col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3";
   ngOnInit() {
-    this.initForm();
+    this.router.params.subscribe((params) => {
+      this.index = +params["id"];
+      this.editMode = params["id"] != null;
+      this.initForm();
+    });
   }
 
   initForm() {
+    let name = "";
+    let species = "";
+    let description = "";
+    let image = "";
+    if (this.editMode) {
+      this.store
+        .select("shop")
+        .pipe(
+          map((State) =>
+            State.animals.find((animal, index) => index === this.index)
+          )
+        )
+        .subscribe((animal) => {
+          name = animal.name;
+          species = animal.species;
+          description = animal.description;
+          image = animal.image;
+        });
+    }
+
     this.newAnimalForm = new FormGroup({
-      Name: new FormControl(null, [Validators.required]),
-      Species: new FormControl(null, [Validators.required]),
-      Description: new FormControl(null),
-      Image: new FormControl(null, [Validators.required]),
+      Name: new FormControl(name, [Validators.required]),
+      Species: new FormControl(species, [Validators.required]),
+      Description: new FormControl(description),
+      Image: new FormControl(image, [Validators.required]),
     });
   }
   onSubmit() {}

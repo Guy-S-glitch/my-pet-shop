@@ -13,6 +13,7 @@ const routes: Routes = [
     children: [
       { path: "new", component: NewAnimalComponent },
       { path: ":id", component: ExpandAnimalComponent },
+      { path: ":id/edit", component: NewAnimalComponent },
     ],
   },
   { path: "checkout", component: CheckoutComponent },

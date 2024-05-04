@@ -12,7 +12,7 @@
       </button>
       <mat-menu #menu="matMenu" xPosition="before">
         <button mat-menu-item [routerLink]="[index]">Expand</button>
-        <button mat-menu-item>Update</button>
+        <button mat-menu-item [routerLink]="[index+'/edit']">Update</button>
         <button mat-menu-item>Remove</button>
       </mat-menu>
     </mat-card-title>
