@@ -24,7 +24,8 @@ import { AddressFormComponent } from "./address-form/address-form.component";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    AddressFormComponent
+    AddressFormComponent,
+  
   ],
 })
 export class CheckoutStepper {

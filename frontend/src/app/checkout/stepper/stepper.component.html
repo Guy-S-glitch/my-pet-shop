@@ -1,9 +1,4 @@
 <mat-stepper [linear]="true" #stepper>
-  <mat-step>
-    <ng-template matStepLabel>Delivery address</ng-template>
-    <app-address-form [stepper]="stepper"> </app-address-form>
-  </mat-step>
-
   <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
     <form [formGroup]="secondFormGroup">
       <mat-form-field>
@@ -16,11 +11,16 @@
         />
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
+        <!-- <button mat-button matStepperPrevious>Back</button> -->
         <button mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Delivery address</ng-template>
+    <app-address-form [stepper]="stepper"> </app-address-form>
+  </mat-step>
+
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     <p>You are now done.</p>
