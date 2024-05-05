@@ -20,3 +20,6 @@
 .mat-nav-list a.active {
     background: blue;
 }
+.example-spacer{
+  flex: 1 1 auto;
+}

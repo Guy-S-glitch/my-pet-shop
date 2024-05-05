@@ -25,6 +25,14 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>frontend</span>
+      <span class="example-spacer"></span>
+        <button matTooltip="Checkout my github!" mat-icon-button class="mat-icon share-icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      <button mat-icon-button matTooltip="Look at your cart" class="mat-icon shopping_cart-icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button mat-raised-button color="warn" class="logOut">Log out</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

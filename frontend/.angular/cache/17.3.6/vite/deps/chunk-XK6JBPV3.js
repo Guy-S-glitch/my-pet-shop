@@ -9,10 +9,10 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-U7HGTPKW.js";
+} from "./chunk-XWI37VOM.js";
 import {
   DOCUMENT
-} from "./chunk-HDFNTJDY.js";
+} from "./chunk-3SIJP3I4.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -71,7 +71,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-2NJ7L2DD.js";
+} from "./chunk-456O5O46.js";
 import {
   BehaviorSubject,
   Observable,
@@ -89,7 +89,7 @@ import {
   take,
   takeUntil,
   tap
-} from "./chunk-ZDOIMVJD.js";
+} from "./chunk-O3FM7X4Z.js";
 
 // node_modules/@angular/cdk/fesm2022/keycodes.mjs
 var TAB = 9;
@@ -4737,6 +4737,7 @@ export {
   ObserversModule,
   addAriaReferencedId,
   removeAriaReferencedId,
+  AriaDescriber,
   ActiveDescendantKeyManager,
   FocusKeyManager,
   InteractivityChecker,
@@ -4745,6 +4746,7 @@ export {
   isFakeTouchstartFromScreenReader,
   LiveAnnouncer,
   FocusMonitor,
+  A11yModule,
   Directionality,
   BidiModule,
   VERSION2 as VERSION,
@@ -4793,4 +4795,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-5KL6UJGF.js.map
+//# sourceMappingURL=chunk-XK6JBPV3.js.map

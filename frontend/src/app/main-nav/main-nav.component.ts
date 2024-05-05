@@ -12,6 +12,7 @@ import { CheckoutComponent } from '../checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { ShopComponent } from '../shop/shop.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-main-nav',
@@ -25,7 +26,7 @@ import { ShopComponent } from '../shop/shop.component';
     MatListModule,
     MatIconModule,
     AsyncPipe,
-
+    MatTooltipModule,
     AuthenticationComponent,
     CheckoutComponent,
     ShopComponent,
