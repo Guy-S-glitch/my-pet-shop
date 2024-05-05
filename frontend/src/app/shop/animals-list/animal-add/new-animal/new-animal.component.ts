@@ -91,7 +91,7 @@ export class NewAnimalComponent implements OnInit {
     });
   }
   onSubmit() {
-
+    
     if (this.editMode) {
     }
     this.store.dispatch(
@@ -99,8 +99,6 @@ export class NewAnimalComponent implements OnInit {
     );
   }
   onCancel() {
-    console.log(this.newAnimalForm.get('Name'));
-    
-    // this.route.navigate([this.editMode?"../../":"../"], { relativeTo: this.router });
+    this.route.navigate([this.editMode?"../../":"../"], { relativeTo: this.router });
   }
 }
