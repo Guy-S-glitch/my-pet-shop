@@ -14,8 +14,7 @@ export const shopReducer = createReducer(
     ...state,
     animals: [...action.animals],
   })),
-  on(fromAction.ADD_ANIMAL, (state, action) => ({
-    ...state,
-    animals: [...state.animals, action.animal],
-  }))
+  on(fromAction.ADD_ANIMAL, (state, action) => {
+    return { ...state, animals: [...state.animals, action.animal] };
+  })
 );

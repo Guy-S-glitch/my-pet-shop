@@ -28,11 +28,12 @@ export class AnimalsListComponent implements OnInit, OnDestroy {
     this.sub = this.store
       .select("shop")
       .pipe(
-        take(1),
         map((resData) => resData.animals)
       )
       .subscribe((animals: animalBoard[]) => {
         this.cards = animals;
+        console.log(this.cards);
+        
       });
   }
   ngOnDestroy(): void {

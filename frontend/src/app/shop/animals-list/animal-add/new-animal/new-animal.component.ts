@@ -19,6 +19,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 import { map, switchMap } from "rxjs";
 import * as fromApp from "../../../../app-state/app-state.reducer";
+import { ADD_ANIMAL } from "../../../store/shop.action";
+import { animalBoard } from "../../../store/animals-list-datasource";
 
 @Component({
   selector: "app-new-animal",
@@ -84,8 +86,14 @@ export class NewAnimalComponent implements OnInit {
       Image: new FormControl(image, [Validators.required]),
     });
   }
-  onSubmit() {}
+  onSubmit() {
+    if (this.editMode) {
+    }
+    this.store.dispatch(
+      ADD_ANIMAL({ animal: this.newAnimalForm.value as animalBoard })
+    );
+  }
   onCancel() {
-    this.route.navigate(["../"], { relativeTo: this.router });
+    this.route.navigate([this.editMode?"../../":"../"], { relativeTo: this.router });
   }
 }
