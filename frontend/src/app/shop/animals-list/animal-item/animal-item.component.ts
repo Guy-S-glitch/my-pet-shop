@@ -1,3 +1,4 @@
+import { Store } from "@ngrx/store";
 import { Component, Input, OnInit } from "@angular/core";
 import { animalBoard } from "../../store/animals-list-datasource";
 import { CommonModule } from "@angular/common";
@@ -14,6 +15,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { appState } from "../../../app-state/app-state.reducer";
+import { REMOVE_ANIMAL } from "../../store/shop.action";
 
 @Component({
   selector: "app-animal-item",
@@ -27,17 +30,24 @@ import { MatGridListModule } from "@angular/material/grid-list";
     MatButtonModule,
     MatCardModule,
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
 })
 export class AnimalItemComponent implements OnInit {
   @Input() index: number;
   @Input() animal: animalBoard;
-  constructor(private route: Router, private router: ActivatedRoute) {}
+  constructor(
+    private route: Router,
+    private router: ActivatedRoute,
+    private store: Store<appState>
+  ) {}
 
-  ngOnInit() {  }
+  ngOnInit() {}
   expandAnimal() {
     // this.route.navigate([this.index], { relativeTo: this.router });
   }
-  removeAnimal() {}
+  removeAnimal() {
+    this.store.dispatch(REMOVE_ANIMAL({ index: this.index }));
+    this.route.navigate(["shop"]);
+  }
 }

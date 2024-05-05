@@ -14,7 +14,26 @@ export const shopReducer = createReducer(
     ...state,
     animals: [...action.animals],
   })),
-  on(fromAction.ADD_ANIMAL, (state, action) => {
-    return { ...state, animals: [...state.animals, action.animal] };
+  on(fromAction.ADD_ANIMAL, (state, action) => ({
+    ...state,
+    animals: [...state.animals, action.animal],
+  })),
+  on(fromAction.REMOVE_ANIMAL, (state, action) => ({
+    ...state,
+    animals: state.animals.filter((animal, index) => index !== action.index),
+  })),
+  on(fromAction.UPDATE_ANIMAL, (state, action) => {
+    const updatedList: animalBoard[] = [...state.animals];
+    const updatedAnimal: animalBoard = {
+      ...state.animals[action.index],
+      ...action.animal,
+    };
+    updatedList[action.index] = updatedAnimal;
+    console.log(action);
+
+    return {
+      ...state,
+      animals: updatedList,
+    };
   })
 );
