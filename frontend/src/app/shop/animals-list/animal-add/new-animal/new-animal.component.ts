@@ -14,13 +14,14 @@ import {
   MatCardActions,
   MatCardContent,
 } from "@angular/material/card";
-import { MatFormField } from "@angular/material/form-field";
+import { MatError, MatFormField, MatFormFieldModule } from "@angular/material/form-field";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
-import { map, switchMap } from "rxjs";
+import { map } from "rxjs";
 import * as fromApp from "../../../../app-state/app-state.reducer";
 import { ADD_ANIMAL } from "../../../store/shop.action";
 import { animalBoard } from "../../../store/animals-list-datasource";
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
   selector: "app-new-animal",
@@ -37,6 +38,9 @@ import { animalBoard } from "../../../store/animals-list-datasource";
     MatCardContent,
     MatButton,
     MatFormField,
+    MatInputModule,
+    MatError,
+    MatFormFieldModule,
   ],
 })
 export class NewAnimalComponent implements OnInit {
@@ -87,6 +91,7 @@ export class NewAnimalComponent implements OnInit {
     });
   }
   onSubmit() {
+
     if (this.editMode) {
     }
     this.store.dispatch(
@@ -94,6 +99,8 @@ export class NewAnimalComponent implements OnInit {
     );
   }
   onCancel() {
-    this.route.navigate([this.editMode?"../../":"../"], { relativeTo: this.router });
+    console.log(this.newAnimalForm.get('Name'));
+    
+    // this.route.navigate([this.editMode?"../../":"../"], { relativeTo: this.router });
   }
 }

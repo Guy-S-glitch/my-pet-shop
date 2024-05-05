@@ -4,50 +4,32 @@
       <mat-card-title>Add your own animal</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div class="form-group">
-        <label for="Name">Name* </label>
-        <input
-          type="text"
-          name="Name"
-          id="Name"
-          formControlName="Name"
-          class="form-control"
-        />
-      </div>
-      <div class="form-group">
-        <label for="Species">Species </label>
-        <input
-          type="text"
-          name="Species"
-          id="Species"
-          class="form-control"
-          formControlName="Species"
-        />
-      </div>
-      <div class="form-group">
-        <label for="Description">Description </label>
-        <textarea
-          type="text"
-          name="Description"
-          id="Description"
-          formControlName="Description"
-          class="form-control"
-          rows="5"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <label for="Image">Image url* </label>
-        <input
-          type="text"
-          name="Image"
-          id="Image"
-          class="form-control"
-          formControlName="Image"
-        />
-      </div>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="Name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Species</mat-label>
+        <input matInput formControlName="Species" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="Description" rows="4"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="Image" />
+      </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-raised-button color="primary">Create</button>
+      <button
+        [disabled]="newAnimalForm.invalid"
+        type="submit"
+        mat-raised-button
+        color="primary"
+      >
+        Create
+      </button>
       <button
         type="button"
         mat-raised-button
