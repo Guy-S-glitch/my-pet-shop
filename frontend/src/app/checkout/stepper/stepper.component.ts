@@ -15,7 +15,7 @@ import { AddressFormComponent } from "./address-form/address-form.component";
 @Component({
   selector: "app-stepper",
   templateUrl: "stepper.component.html",
-  styleUrl: "stepper.component.css",
+  styleUrl: "stepper.component.scss",
   standalone: true,
   imports: [
     MatButtonModule,

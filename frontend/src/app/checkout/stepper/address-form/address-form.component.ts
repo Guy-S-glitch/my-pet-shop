@@ -17,7 +17,7 @@ import { MatStepper } from "@angular/material/stepper";
 @Component({
   selector: "app-address-form",
   templateUrl: "./address-form.component.html",
-  styleUrl: "./address-form.component.css",
+  styleUrl: "./address-form.component.scss",
   standalone: true,
   imports: [
     MatInputModule,

@@ -2,18 +2,18 @@ import {
   DomPortalOutlet,
   PortalModule,
   TemplatePortal
-} from "./chunk-QW2VJQ6L.js";
+} from "./chunk-ARWCP6MX.js";
 import {
   ScrollDispatcher,
   ScrollingModule,
   ViewportRuler
-} from "./chunk-TQ52DFPR.js";
+} from "./chunk-QBTW6FKZ.js";
 import {
   BidiModule,
   Directionality,
   ESCAPE,
   hasModifierKey
-} from "./chunk-XK6JBPV3.js";
+} from "./chunk-RBSS3H2B.js";
 import {
   Platform,
   _getEventTarget,
@@ -21,11 +21,11 @@ import {
   coerceArray,
   coerceCssPixelValue,
   supportsScrollBehavior
-} from "./chunk-XWI37VOM.js";
+} from "./chunk-C7VIBFBQ.js";
 import {
   DOCUMENT,
   Location
-} from "./chunk-3SIJP3I4.js";
+} from "./chunk-XX46JKJM.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -56,20 +56,22 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵinject
-} from "./chunk-456O5O46.js";
+} from "./chunk-OHFASOX4.js";
 import {
   merge
-} from "./chunk-RXWMTUTY.js";
+} from "./chunk-S6KPQDJK.js";
 import {
   Subject,
   Subscription,
-  __spreadProps,
-  __spreadValues,
   filter,
   take,
   takeUntil,
   takeWhile
-} from "./chunk-O3FM7X4Z.js";
+} from "./chunk-UA44W22Y.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-QOHD3WUR.js";
 
 // node_modules/@angular/cdk/fesm2022/overlay.mjs
 var scrollBehaviorSupported = supportsScrollBehavior();
@@ -2764,4 +2766,4 @@ export {
   CdkConnectedOverlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-62SMAB5S.js.map
+//# sourceMappingURL=chunk-J4W53FGQ.js.map

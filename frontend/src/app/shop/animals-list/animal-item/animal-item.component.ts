@@ -18,7 +18,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 @Component({
   selector: "app-animal-item",
   templateUrl: "./animal-item.component.html",
-  styleUrls: ["./animal-item.component.css"],
+  styleUrls: ["./animal-item.component.scss"],
   standalone: true,
   imports: [
     MatGridListModule,

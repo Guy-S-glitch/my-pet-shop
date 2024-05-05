@@ -18,7 +18,7 @@ import * as fromShop from "../../../../app-state/app-state.reducer";
 @Component({
   selector: "app-expand-animal",
   templateUrl: "./expand-animal.component.html",
-  styleUrls: ["./expand-animal.component.css"],
+  styleUrls: ["./expand-animal.component.scss"],
   standalone: true,
   imports: [
     CommonModule,

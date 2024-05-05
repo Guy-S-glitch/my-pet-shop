@@ -26,7 +26,7 @@ import { MatInputModule } from "@angular/material/input";
 @Component({
   selector: "app-new-animal",
   templateUrl: "./new-animal.component.html",
-  styleUrls: ["./new-animal.component.css"],
+  styleUrls: ["./new-animal.component.scss"],
   standalone: true,
   imports: [
     CommonModule,

@@ -4,7 +4,7 @@ import { CheckoutStepper } from './stepper/stepper.component';
 @Component({
   selector: "app-checkout",
   templateUrl: "./checkout.component.html",
-  styleUrl: "./checkout.component.css",
+  styleUrl: "./checkout.component.scss",
   standalone:true,
   imports:[CheckoutStepper]
 })

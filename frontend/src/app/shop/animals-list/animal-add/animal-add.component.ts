@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: "app-animal-add",
   templateUrl: "./animal-add.component.html",
-  styleUrls: ["./animal-add.component.css"],
+  styleUrls: ["./animal-add.component.scss"],
   standalone: true,
   imports: [
     MatGridListModule,

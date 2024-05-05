@@ -11,7 +11,7 @@ import { map, Subscription, take } from "rxjs";
 @Component({
   selector: "app-animals-list",
   templateUrl: "./animals-list.component.html",
-  styleUrl: "./animals-list.component.css",
+  styleUrl: "./animals-list.component.scss",
   standalone: true,
   imports: [
     MatGridListModule,

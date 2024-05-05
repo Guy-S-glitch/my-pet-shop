@@ -22,7 +22,7 @@ import { MatInputModule } from "@angular/material/input";
 @Component({
   selector: "app-authentication",
   templateUrl: "./authentication.component.html",
-  styleUrl: "./authentication.component.css",
+  styleUrl: "./authentication.component.scss",
   standalone: true,
   imports: [
     MatCard,
