@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { ShopComponent } from '../shop/shop.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatBadgeModule} from '@angular/material/badge'
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
@@ -25,6 +25,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatBadgeModule,
     AsyncPipe,
     MatTooltipModule,
     AuthenticationComponent,
