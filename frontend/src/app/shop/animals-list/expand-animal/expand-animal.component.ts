@@ -14,6 +14,7 @@ import { map, Subscription, switchMap, take } from "rxjs";
 import { animalBoard } from "../../store/animals-list-datasource";
 import { Store } from "@ngrx/store";
 import * as fromShop from "../../../app-state/app-state.reducer";
+import { ADD_CART } from "../../../checkout/store/checkout.action";
 
 @Component({
   selector: "app-expand-animal",
@@ -64,7 +65,8 @@ export class ExpandAnimalComponent implements OnInit, OnDestroy {
   onCancel() {
     this.route.navigate(["../"], { relativeTo: this.router });
   }
-  AddToCart(){
-    
+  AddToCart() {
+    debugger;
+    this.store.dispatch(ADD_CART({ animal: this.selectedAnimal }));
   }
 }
