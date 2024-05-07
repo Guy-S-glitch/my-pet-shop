@@ -35,13 +35,25 @@
       </button>
       <button
         mat-icon-button
-        matTooltip="Look at your cart"
+        [matTooltip]="'your bag is empty'"
         class="mat-icon shopping_cart-icon"
       >
         <mat-icon matBadge="0" matBadgeColor="warn" matBadgeSize="small"
           >shopping_cart</mat-icon
         >
       </button>
+      <button
+        mat-icon-button
+        class="mat-icon storage-icon"
+        [mat-menu-trigger-for]="menu"
+        matTooltip="Manage your data"
+      >
+        <mat-icon>storage</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Fetch data</button>
+        <button mat-menu-item>Save data</button>
+      </mat-menu>
       <button mat-raised-button color="warn" class="logOut">Log out</button>
     </mat-toolbar>
 

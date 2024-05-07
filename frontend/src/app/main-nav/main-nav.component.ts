@@ -14,6 +14,7 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 import { ShopComponent } from '../shop/shop.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge'
+import { MatMenuModule } from '@angular/material/menu';
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
@@ -26,6 +27,7 @@ import {MatBadgeModule} from '@angular/material/badge'
     MatListModule,
     MatIconModule,
     MatBadgeModule,
+    MatMenuModule,
     AsyncPipe,
     MatTooltipModule,
     AuthenticationComponent,
