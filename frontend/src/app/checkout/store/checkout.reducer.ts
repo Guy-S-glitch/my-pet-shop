@@ -10,10 +10,10 @@ const initialState: State = {
 };
 export const checkoutReducer = createReducer(
   initialState,
-  on(ADD_CART, (state, action) => {
-    debugger;
-    return { ...state, cart: [...state.cart, action.animal] };
-  }),
+  on(ADD_CART, (state, action) => ({
+    ...state,
+    cart: [...state.cart, action.animal],
+  })),
   on(SET_CART, (state, action) => ({
     ...state,
     cart: [...action.cart],

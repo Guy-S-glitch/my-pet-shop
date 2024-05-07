@@ -557,8 +557,9 @@ var PortalModule = _PortalModule;
 export {
   ComponentPortal,
   TemplatePortal,
+  BasePortalOutlet,
   DomPortalOutlet,
   CdkPortalOutlet,
   PortalModule
 };
-//# sourceMappingURL=chunk-ARWCP6MX.js.map
+//# sourceMappingURL=chunk-MLNKZ4HV.js.map
