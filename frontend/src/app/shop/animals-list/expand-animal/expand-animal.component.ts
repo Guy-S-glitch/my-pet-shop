@@ -64,4 +64,7 @@ export class ExpandAnimalComponent implements OnInit, OnDestroy {
   onCancel() {
     this.route.navigate(["../"], { relativeTo: this.router });
   }
+  AddToCart(){
+    
+  }
 }
