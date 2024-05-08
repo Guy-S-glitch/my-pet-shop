@@ -1,19 +1,29 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>
-      <h3>{{ items }} ITEM{{ items !== 1 ? "S" : "" }}</h3>
-    </mat-card-title>
+    <h2>{{ items }} ITEM{{ items !== 1 ? "S" : "" }}</h2>
   </mat-card-header>
-  <hr />
+  <mat-divider> </mat-divider>
   <mat-card-content>
-    <div *ngFor="let item of bag">
-      <mat-card class="row">
-        <div class="col-sm-4"><img [src]="item.image" [alt]="item.name" /></div>
-        <div class="col-sm-8">
-          <mat-card-title> {{ item.name }} </mat-card-title>
-          <mat-card-subtitle> {{ item.species }} </mat-card-subtitle>
-        </div>
-      </mat-card>
-    </div>
+    <mat-grid-list
+      style="width: 100%"
+      class="items"
+      [cols]="10"
+      rowHeight="10px"
+      *ngFor="let item of bag"
+    >
+      <mat-grid-tile [colspan]="3" [rowspan]="10"
+        ><img class="image" [src]="item.image" [alt]="item.name"
+      /></mat-grid-tile>
+      <mat-grid-tile [colspan]="5" [rowspan]="10"
+        >{{ item.name }}
+        {{ item.species }}
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="5">
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button></mat-grid-tile
+      >
+      <mat-divider></mat-divider>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>

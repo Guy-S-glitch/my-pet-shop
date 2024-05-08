@@ -9,13 +9,19 @@ import {
 import { animalBoard } from "../../shop/store/animals-list-datasource";
 import { appState } from "../../app-state/app-state.reducer";
 import { map } from "rxjs";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatListModule } from "@angular/material/list";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
   selector: "app-bag",
   templateUrl: "./bag.component.html",
   styleUrls: ["./bag.component.scss"],
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatCardTitle, MatCardContent],
+  imports: [CommonModule, MatCardModule, MatCardTitle, MatCardContent,MatToolbarModule,MatDividerModule,MatListModule,MatGridListModule,MatButtonModule,MatIconModule],
 })
 export class BagComponent implements OnInit {
   constructor(private store: Store<appState>) {}
