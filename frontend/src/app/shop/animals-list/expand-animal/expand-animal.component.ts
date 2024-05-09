@@ -62,6 +62,8 @@ export class ExpandAnimalComponent implements OnInit, OnDestroy {
   }
   AddToCart() {
     this.store.dispatch(ADD_CART({ animal: this.selectedAnimal }));
-    this._snackBar.open("animal added to bag", "dismiss");
+    this._snackBar.open("animal added to bag", "dismiss", {
+      duration: 3000,
+    });
   }
 }
