@@ -1,10 +1,13 @@
-.spacer{
-    flex: 1 1 auto;
+.spacer {
+  flex: 1 1 auto;
 }
-.items{
-    margin: 0px 10px;
+.items {
+  margin: 0px 10px;
 }
-.image{
-    width: 90%;
-    height: 90%;
+.image {
+  width: 90%;
+  height: 90%;
+}
+mat-grid-tile {
+  border: 1px solid black;
 }

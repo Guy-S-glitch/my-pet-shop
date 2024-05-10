@@ -39,7 +39,6 @@ export class ExpandAnimalComponent implements OnInit, OnDestroy {
   sub: Subscription;
   selectedAnimal: animalBoard;
   ngOnInit() {
-    debugger;
     this.sub = this.router.params.subscribe((params) => {
       this.index = +params["id"];
       this.store

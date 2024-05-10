@@ -30,7 +30,7 @@ import { map, take } from "rxjs";
 export class AnimalItemComponent implements OnInit {
   @Input() index: number;
   @Input() animal: animalBoard;
-  pla: animalBoard;
+  // pla: animalBoard;
   constructor(
     private route: Router,
     private router: ActivatedRoute,
@@ -38,15 +38,12 @@ export class AnimalItemComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.index);
-        console.log(this.animal);
-
-    this.store
-      .select("shop")
-      .pipe(map((res) => res.animals))
-      .subscribe((ani) => (this.pla = ani[this.index]));
-    console.log(this.pla.name);
-        console.log(this.pla);
+    // this.store
+    //   .select("shop")
+    //   .pipe(map((res) => res.animals))
+    //   .subscribe((ani) => (this.pla = ani[this.index]));
+    // console.log(this.pla.name);
+    //     console.log(this.pla);
 
   }
 

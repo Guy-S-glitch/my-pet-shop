@@ -109,7 +109,7 @@ export class NewAnimalComponent implements OnInit {
     );
   }
   onCancel() {
-    this.route.navigate([this.editMode ? "../../" : "../"], {
+    this.route.navigate(['shop'], {
       relativeTo: this.router,
     });
   }

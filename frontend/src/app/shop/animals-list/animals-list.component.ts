@@ -31,9 +31,7 @@ export class AnimalsListComponent implements OnInit, OnDestroy {
         map((resData) => resData.animals)
       )
       .subscribe((animals: animalBoard[]) => {
-        this.cards = animals;
-        console.log(this.cards);
-        
+        this.cards = animals;        
       });
   }
   ngOnDestroy(): void {
