@@ -9,7 +9,7 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-C7VIBFBQ.js";
+} from "./chunk-4MMESZQY.js";
 import {
   DOCUMENT
 } from "./chunk-XX46JKJM.js";
@@ -4726,6 +4726,7 @@ var _MatInternalFormField = __MatInternalFormField;
 })();
 
 export {
+  TAB,
   ENTER,
   ESCAPE,
   SPACE,
@@ -4797,4 +4798,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-RBSS3H2B.js.map
+//# sourceMappingURL=chunk-MXQM7OFU.js.map

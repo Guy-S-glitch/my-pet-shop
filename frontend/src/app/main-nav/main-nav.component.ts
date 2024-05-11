@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { AsyncPipe, CommonModule } from "@angular/common";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -16,7 +16,11 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatInputModule } from "@angular/material/input";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule, MatLabel } from "@angular/material/form-field";
+import { Store } from "@ngrx/store";
+import { appState } from "../app-state/app-state.reducer";
+import { animalBoard } from "../shop/store/animals-list-datasource";
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
 @Component({
   selector: "app-main-nav",
   templateUrl: "./main-nav.component.html",
@@ -24,6 +28,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
   standalone: true,
   imports: [
     CommonModule,
+
+    MatAutocompleteModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -32,9 +38,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatBadgeModule,
     MatMenuModule,
     MatInputModule,
+    MatLabel,
     MatFormFieldModule,
     AsyncPipe,
     MatTooltipModule,
+
     AuthenticationComponent,
     CheckoutComponent,
     ShopComponent,
@@ -42,7 +50,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     RouterModule,
   ],
 })
-export class MainNavComponent {
+export class MainNavComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver
@@ -51,4 +59,13 @@ export class MainNavComponent {
       map((result) => result.matches),
       shareReplay()
     );
+
+  constructor(private store: Store<appState>) {}
+  animals: animalBoard[] = [];
+  ngOnInit(): void {
+    this.store
+      .select("shop")
+      .pipe(map((resData) => resData.animals))
+      .subscribe((list) => (this.animals = list));
+  }
 }

@@ -27,15 +27,17 @@
       </button>
       <span class="nav-gap">frontend</span>
       <mat-form-field class="example-form-field example-spacer nav-gap">
+        <mat-label>Search for items</mat-label>
         <input
           matInput
-          placeholder="Search for items"
           class="search-input"
           #searchInput
         />
-        <button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="clear">
+        
+        <button *ngIf="searchInput.value" matSuffix mat-icon-button>
           <mat-icon>close</mat-icon>
         </button>
+        <button mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
       </mat-form-field>
 
       <button
