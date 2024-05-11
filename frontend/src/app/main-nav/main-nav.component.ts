@@ -7,9 +7,9 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { Observable } from "rxjs";
-import { map, shareReplay, startWith } from "rxjs/operators";
+import { map, shareReplay, startWith, take, tap } from "rxjs/operators";
 import { CheckoutComponent } from "../checkout/checkout.component";
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { AuthenticationComponent } from "../authentication/authentication.component";
 import { ShopComponent } from "../shop/shop.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
@@ -62,7 +62,7 @@ export class MainNavComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private store: Store<appState>) {}
+  constructor(private store: Store<appState>, private route: Router) {}
   animals: animalBoard[] = [];
   filterChanges$: Observable<animalBoard[]>;
   searchForm = new FormControl();
@@ -71,10 +71,9 @@ export class MainNavComponent implements OnInit {
       .select("shop")
       .pipe(map((resData) => resData.animals))
       .subscribe((list) => (this.animals = [...list]));
-    console.log(this.animals);
     this.filterChanges$ = this.searchForm.valueChanges.pipe(
       startWith(""),
-      map((name) => name? this._filter(name):this.animals)
+      map((name) => (name ? this._filter(name) : this.animals))
     );
   }
   private _filter(value: string): animalBoard[] {
@@ -82,7 +81,16 @@ export class MainNavComponent implements OnInit {
       animal.name.toLowerCase().includes(value.toLowerCase())
     );
   }
-  searchAnimal(){
-    
+  searchAnimal(input: string) {
+    this.animals.some(
+      (animal) => animal.name.toLowerCase() === input.toLowerCase()
+    )
+      ? this.route.navigate([
+          "shop",
+          this.animals.findIndex(
+            (animal) => animal.name.toLowerCase() === input.toLowerCase()
+          ),
+        ])
+      : null;
   }
 }
