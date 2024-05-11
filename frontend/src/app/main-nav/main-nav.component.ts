@@ -77,10 +77,12 @@ export class MainNavComponent implements OnInit {
       map((name) => name? this._filter(name):this.animals)
     );
   }
-  //(state ? this._filterStates(state) : this.states.slice())),);
   private _filter(value: string): animalBoard[] {
     return this.animals.filter((animal) =>
       animal.name.toLowerCase().includes(value.toLowerCase())
     );
+  }
+  searchAnimal(){
+    
   }
 }
