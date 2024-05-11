@@ -17,6 +17,7 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
+        class="nav-gap"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
@@ -24,19 +25,30 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>frontend</span>
-      <span class="example-spacer"></span>
+      <span class="nav-gap">frontend</span>
+      <mat-form-field class="example-form-field example-spacer nav-gap">
+        <input
+          matInput
+          placeholder="Search for items"
+          class="search-input"
+          #searchInput
+        />
+        <button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
       <button
         matTooltip="Checkout my github!"
         mat-icon-button
-        class="mat-icon share-icon"
+        class="mat-icon share-icon nav-gap"
       >
         <mat-icon>share</mat-icon>
       </button>
       <button
         mat-icon-button
         [matTooltip]="'your bag is empty'"
-        class="mat-icon shopping_cart-icon"
+        class="mat-icon shopping_cart-icon nav-gap"
       >
         <mat-icon matBadge="0" matBadgeColor="warn" matBadgeSize="small"
           >shopping_cart</mat-icon
@@ -44,7 +56,7 @@
       </button>
       <button
         mat-icon-button
-        class="mat-icon storage-icon"
+        class="mat-icon storage-icon nav-gap"
         [mat-menu-trigger-for]="menu"
         matTooltip="Manage your data"
       >

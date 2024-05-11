@@ -15,7 +15,7 @@
   z-index: 1;
 }
 .mat-toolbar {
-  height: 80px;
+  height: 64px;
 }
 .mat-nav-list a.active {
   background: blue;
@@ -23,3 +23,13 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+.nav-gap {
+  margin: 0px 5px;
+}
+.search-input {
+  color: black;
+}
+.example-form-field{
+  color:black;
+}
+
