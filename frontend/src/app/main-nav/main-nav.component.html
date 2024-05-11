@@ -32,8 +32,13 @@
           matInput
           class="search-input"
           #searchInput
+          [matAutocomplete]="auto"
         />
-        
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of animals" [value]="option.name">
+            {{ option.name }}
+          </mat-option>
+        </mat-autocomplete>
         <button *ngIf="searchInput.value" matSuffix mat-icon-button>
           <mat-icon>close</mat-icon>
         </button>

@@ -20,7 +20,7 @@ import { MatFormFieldModule, MatLabel } from "@angular/material/form-field";
 import { Store } from "@ngrx/store";
 import { appState } from "../app-state/app-state.reducer";
 import { animalBoard } from "../shop/store/animals-list-datasource";
-import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 @Component({
   selector: "app-main-nav",
   templateUrl: "./main-nav.component.html",
@@ -66,6 +66,8 @@ export class MainNavComponent implements OnInit {
     this.store
       .select("shop")
       .pipe(map((resData) => resData.animals))
-      .subscribe((list) => (this.animals = list));
+      .subscribe((list) => (this.animals = [...list]));
+      console.log(this.animals);
+      
   }
 }
