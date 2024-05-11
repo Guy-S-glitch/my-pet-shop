@@ -26,25 +26,27 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="nav-gap">frontend</span>
-      <mat-form-field class="example-form-field example-spacer nav-gap">
-        <mat-label>Search for items</mat-label>
-        <input
-          matInput
-          class="search-input"
-          #searchInput
-          [matAutocomplete]="auto"
-        />
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of animals" [value]="option.name">
-            {{ option.name }}
-          </mat-option>
-        </mat-autocomplete>
-        <button *ngIf="searchInput.value" matSuffix mat-icon-button>
-          <mat-icon>close</mat-icon>
-        </button>
-        <button mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
-      </mat-form-field>
-
+      <form class="example-spacer">
+        <mat-form-field class="example-form-field nav-gap">
+          <mat-label>Search for items</mat-label>
+          <input
+          [formControl]="searchForm"
+            matInput
+            class="search-input"
+            #searchInput
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filterChanges$|async" [value]="option.name">
+              {{ option.name }}
+            </mat-option>
+          </mat-autocomplete>
+          <button *ngIf="searchInput.value" matSuffix mat-icon-button>
+            <mat-icon>close</mat-icon>
+          </button>
+          <button mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
+        </mat-form-field>
+      </form>
       <button
         matTooltip="Checkout my github!"
         mat-icon-button

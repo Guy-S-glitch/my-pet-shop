@@ -7,7 +7,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { Observable } from "rxjs";
-import { map, shareReplay } from "rxjs/operators";
+import { map, shareReplay, startWith } from "rxjs/operators";
 import { CheckoutComponent } from "../checkout/checkout.component";
 import { RouterModule } from "@angular/router";
 import { AuthenticationComponent } from "../authentication/authentication.component";
@@ -21,6 +21,7 @@ import { Store } from "@ngrx/store";
 import { appState } from "../app-state/app-state.reducer";
 import { animalBoard } from "../shop/store/animals-list-datasource";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { FormControl, ReactiveFormsModule } from "@angular/forms";
 @Component({
   selector: "app-main-nav",
   templateUrl: "./main-nav.component.html",
@@ -28,6 +29,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
   standalone: true,
   imports: [
     CommonModule,
+    ReactiveFormsModule,
 
     MatAutocompleteModule,
     MatToolbarModule,
@@ -62,12 +64,23 @@ export class MainNavComponent implements OnInit {
 
   constructor(private store: Store<appState>) {}
   animals: animalBoard[] = [];
+  filterChanges$: Observable<animalBoard[]>;
+  searchForm = new FormControl();
   ngOnInit(): void {
     this.store
       .select("shop")
       .pipe(map((resData) => resData.animals))
       .subscribe((list) => (this.animals = [...list]));
-      console.log(this.animals);
-      
+    console.log(this.animals);
+    this.filterChanges$ = this.searchForm.valueChanges.pipe(
+      startWith(""),
+      map((name) => name? this._filter(name):this.animals)
+    );
+  }
+  //(state ? this._filterStates(state) : this.states.slice())),);
+  private _filter(value: string): animalBoard[] {
+    return this.animals.filter((animal) =>
+      animal.name.toLowerCase().includes(value.toLowerCase())
+    );
   }
 }
