@@ -9,7 +9,7 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-4MMESZQY.js";
+} from "./chunk-C7VIBFBQ.js";
 import {
   DOCUMENT
 } from "./chunk-XX46JKJM.js";
@@ -4726,6 +4726,8 @@ var _MatInternalFormField = __MatInternalFormField;
 })();
 
 export {
+  Directionality,
+  BidiModule,
   TAB,
   ENTER,
   ESCAPE,
@@ -4750,8 +4752,6 @@ export {
   LiveAnnouncer,
   FocusMonitor,
   A11yModule,
-  Directionality,
-  BidiModule,
   VERSION2 as VERSION,
   AnimationCurves,
   AnimationDurations,
@@ -4798,4 +4798,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-MXQM7OFU.js.map
+//# sourceMappingURL=chunk-JVJJIYJR.js.map

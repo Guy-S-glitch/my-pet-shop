@@ -22,10 +22,10 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵinject
 } from "./chunk-OHFASOX4.js";
+import "./chunk-5W7TR2ZS.js";
 import {
   queueScheduler
 } from "./chunk-S6KPQDJK.js";
-import "./chunk-5W7TR2ZS.js";
 import {
   BehaviorSubject,
   Observable,

@@ -22,6 +22,9 @@ import { appState } from "../app-state/app-state.reducer";
 import { animalBoard } from "../shop/store/animals-list-datasource";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { MatDialog } from "@angular/material/dialog";
+import { DialogComponent } from "../dialog/dialog.component";
+import { SET_DIALOG } from "../dialog/store/dialog.action";
 @Component({
   selector: "app-main-nav",
   templateUrl: "./main-nav.component.html",
@@ -62,7 +65,11 @@ export class MainNavComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private store: Store<appState>, private route: Router) {}
+  constructor(
+    private store: Store<appState>,
+    private route: Router,
+    private dialog: MatDialog
+  ) {}
   animals: animalBoard[] = [];
   filterChanges$: Observable<animalBoard[]>;
   searchForm = new FormControl();
@@ -91,6 +98,16 @@ export class MainNavComponent implements OnInit {
             (animal) => animal.name.toLowerCase() === input.toLowerCase()
           ),
         ])
-      : null;
+      : this.openDialog();
+  }
+  openDialog() {
+    this.store.dispatch(
+      SET_DIALOG({
+        title: "Search result",
+        subtitle: "this animal does not exist",
+        label: null,
+      })
+    );
+    this.dialog.open(DialogComponent);
   }
 }
