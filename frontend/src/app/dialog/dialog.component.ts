@@ -1,27 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
-import {
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogModule,
-  MatDialogRef,
-  MatDialogTitle,
-} from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
 import { Store } from "@ngrx/store";
 import { appState } from "../app-state/app-state.reducer";
-import { map } from "rxjs";
 @Component({
   selector: "app-dialog",
   standalone: true,
-  imports: [
-    MatDialogModule,
-    MatButtonModule,
-    MatDialogTitle,
-    MatDialogContent,
-    MatDialogActions,
-    MatDialogClose,
-  ],
+  imports: [MatDialogModule, MatButtonModule],
   templateUrl: "./dialog.component.html",
   styleUrl: "./dialog.component.scss",
 })
