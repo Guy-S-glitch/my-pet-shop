@@ -15,6 +15,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { MatSliderModule } from "@angular/material/slider";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 
 @Component({
@@ -33,6 +34,7 @@ import { ActivatedRoute, Router, RouterModule } from "@angular/router";
     MatGridListModule,
     MatButtonModule,
     MatIconModule,
+    MatSliderModule,
     RouterModule,
   ],
 })
@@ -58,5 +60,12 @@ export class BagComponent implements OnInit {
     this.route.navigate(["../shop", animals.indexOf(item)], {
       relativeTo: this.router,
     });
+  }
+  formatLabel(value: number): string {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + "k";
+    }
+
+    return `${value}`;
   }
 }

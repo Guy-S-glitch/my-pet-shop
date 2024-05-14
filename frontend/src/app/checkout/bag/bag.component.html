@@ -25,7 +25,18 @@
       <mat-grid-tile [colspan]="5" [rowspan]="3">
         <a (click)="view(item)"> {{ item.species }} </a>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="5" [rowspan]="3"> </mat-grid-tile>
+      <mat-grid-tile [colspan]="7" [rowspan]="3">
+        <mat-slider
+          min="0"
+          max="100000"
+          step="1000"
+          showTickMarks
+          discrete
+          [displayWith]="formatLabel"
+        >
+          <input class="slider" matSliderThumb />
+        </mat-slider>
+      </mat-grid-tile>
       <mat-divider></mat-divider>
     </mat-grid-list>
   </mat-card-content>

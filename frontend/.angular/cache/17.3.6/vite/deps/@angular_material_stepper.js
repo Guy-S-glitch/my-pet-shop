@@ -1,9 +1,4 @@
 import {
-  MatIcon,
-  MatIconModule
-} from "./chunk-THIWTRHW.js";
-import "./chunk-JB2D3UGJ.js";
-import {
   CdkPortalOutlet,
   PortalModule,
   TemplatePortal
@@ -19,6 +14,11 @@ import {
   trigger
 } from "./chunk-TUTXFNS6.js";
 import {
+  MatIcon,
+  MatIconModule
+} from "./chunk-UC3AQ24V.js";
+import "./chunk-JB2D3UGJ.js";
+import {
   BidiModule,
   Directionality,
   ENTER,
@@ -30,11 +30,11 @@ import {
   MatRippleModule,
   SPACE,
   hasModifierKey
-} from "./chunk-JVJJIYJR.js";
+} from "./chunk-4V5GRFKV.js";
 import {
   Platform,
   _getFocusedElementPierceShadowDom
-} from "./chunk-C7VIBFBQ.js";
+} from "./chunk-4MMESZQY.js";
 import {
   CommonModule,
   NgTemplateOutlet
