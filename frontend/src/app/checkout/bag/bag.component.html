@@ -2,7 +2,7 @@
   <mat-card-header>
     <h2>{{ items }} ITEM{{ items !== 1 ? "S" : "" }}</h2>
   </mat-card-header>
-  <mat-divider> </mat-divider>
+  <mat-divider class="divider"> </mat-divider>
   <mat-card-content>
     <mat-grid-list
       style="width: 100%"
@@ -11,11 +11,11 @@
       rowHeight="10px"
       *ngFor="let item of bag"
     >
-      <mat-grid-tile [colspan]="3" [rowspan]="10"
+      <mat-grid-tile [colspan]="3" [rowspan]="9"
         ><img class="image" [src]="item.image" [alt]="item.name"
       /></mat-grid-tile>
       <mat-grid-tile [colspan]="5" [rowspan]="3">
-        <h2>price: lot</h2>
+        <h2 class="price">price: lot</h2>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="2" [rowspan]="6">
         <button mat-icon-button>
@@ -26,7 +26,7 @@
         <a (click)="view(item)"> {{ item.species }} </a>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="3" [rowspan]="3">
-        <h3 class="animal-amount" style="top: 0px; position:absolute;">Qty: {{ slider.value }}</h3>
+        <h3 class="animal-amount">Qty: {{ slider.value }}</h3>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="4" [rowspan]="3">
