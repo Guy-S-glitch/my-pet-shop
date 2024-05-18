@@ -10,7 +10,7 @@
       [cols]="10"
       rowHeight="10px"
       *ngFor="let item of bag"
-    >
+      >
       <mat-grid-tile [colspan]="3" [rowspan]="9"
         ><img class="image" [src]="item.image" [alt]="item.name"
       /></mat-grid-tile>
@@ -26,15 +26,18 @@
         <a (click)="view(item)"> {{ item.species }} </a>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="3" [rowspan]="3">
-        <h3 class="animal-amount">Qty: {{ slider.value }}</h3>
+        <h3 class="animal-amount">Qty: {{item.quantity }}</h3>
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="4" [rowspan]="3">
-        <mat-slider min="0" max="10" step="1">
-          <input class="slider" #slider matSliderThumb />
+      <!-- <mat-grid-tile [colspan]="4" [rowspan]="3">
+        <mat-slider showTickMarks discrete  min="0" max="10" step="1">
+          <input
+            class="slider"
+            #slider
+            matSliderThumb
+          />
         </mat-slider>
-      </mat-grid-tile>
-      <mat-divider></mat-divider>
+      </mat-grid-tile> -->
     </mat-grid-list>
   </mat-card-content>
 </mat-card>
